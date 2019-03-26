@@ -11,11 +11,11 @@
         <ul class="navbar-nav mr-auto navbar-inverse">
              @guest
                 <li class="nav-item">
-                    <a class="nav-link" href="login">{{ ('Login') }}</a>
+                    <a class="nav-link" href="{{URL::to('login')}}">{{ ('Login') }}</a>
                 </li>
                 @if (Route::has('register'))
                 <li class="nav-item">
-                    <a class="nav-link" href="register">{{ ('Register') }}</a>
+                    <a class="nav-link" href="{{URL::to('register')}}">{{ ('Register') }}</a>
                 </li>
                 @endif
                 @else
