@@ -8,8 +8,8 @@
       @endif
 
       
-      <h4 class="text-center mb-4">Viewing Dorm {{$dorm->id}}      </h4>
-           @if(Auth::check())
+      <h4 class="text-center mb-4">Viewing Dorm {{$dorm->id}}</h4>
+      @if(Auth::check())
         @if(Auth::user()->isAdmin() and $dorm->status == "0")
         <a href="verify/{{$dorm->id}}" class="btn btn-primary">Verify Dorm</a>
         @endif
@@ -18,7 +18,7 @@
      
       <hr> 
       <a href="bookmark/{{$dorm->id}}" class="btn btn-primary">Bookmark</a>
- @endif
+     @endif
     </div>
   </div>
 </div>
