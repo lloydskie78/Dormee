@@ -258,16 +258,25 @@
     <div class="row py-5">
       <div class="col-md-6 mb-5">
        <h4 class="">Reviews<br></h4>
-
+      <hr>
         @php
           if (!empty($reviews)) {
           $i = 0;
             foreach($reviews as $review) {
-            echo "<div class='card p-3 card-body'>
-
-              <b>By on . $review->user() . $review->created_at</b> 
+            echo "<div class='row'>
+            <div class='col-md-2'>
+              <img class='comment-img' src='http://2.bp.blogspot.com/-WCkoxnPWXcE/TbZTDG0UI-I/AAAAAAAAAAQ/mukPK0QOVLI/s1600/hotlink.jpg'>
+            </div>
+            <div class='col-md-10'>
+            <div>
+               <h6>Posted on . $review->created_at</h6> 
+            </div>
               <p>$review->review</p>
-              </div>";
+               <p class='pull-right'><a href=' '>Flag</a></p>
+              </div>
+
+            </div>
+            ";
               $i++;
              
             }

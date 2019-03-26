@@ -20,7 +20,7 @@
 				<h3 class="my-5">Dorms</h3>
 			</div>
 			<div class="col-md-2">
-				<span class="glyphicon glyphicon-retweet fa-5x mt-5 fa-spin py-5"></span>
+				<span class="fa fa-spinner fa-pulse fa-5x mt-5 fa-spin py-5"></span>
 			</div>
 			<div class="col-md-5 box m-auto faa-float animated shadowed rounded" style="height: 250px; max-width:250px;">
 				<span class="fa fa-child mt-5 fa-5x faa-tada animated"></span>

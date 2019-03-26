@@ -10,12 +10,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto navbar-inverse">
              @guest
-                <li class="nav-item">
-                    <a class="nav-link" href="{{URL::to('login')}}">{{ ('Login') }}</a>
+                <li class="nav-item pl-5">
+                    <a class="nav-link" href="{{URL::to('login')}}" class="mx-2 mr-5">{{ ('Login') }}</a>
                 </li>
                 @if (Route::has('register'))
-                <li class="nav-item">
-                    <a class="nav-link" href="{{URL::to('register')}}">{{ ('Register') }}</a>
+                <li class="nav-item pl-5" >
+                    <a class="nav-link" href="{{URL::to('register')}}" >{{ ('Register') }}</a>
                 </li>
                 @endif
                 @else

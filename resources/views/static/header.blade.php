@@ -20,11 +20,9 @@
 					<div class="site-navbar">
 						<ul class="main-menu">
 							<li><a href="/">Home</a></li>
-							<li><a href="{{ URL::to('dorms') }}">FEATURED LISTING</a></li>
+							<li><a href="{{ URL::to('dorms') }}">DORM LISTINGS</a></li>
 							<li><a href="{{ URL::to('about') }}">ABOUT US</a></li>
-							<li><a href="{{ URL::to('contact') }}">Pages</a></li>
-							<!-- <li><a href="blog.html">Blog</a></li> -->
-							<li><a href="{{ URL::to('contact') }}">Contact</a></li>
+							<li><a href="{{ URL::to('contact') }}">CONTACT US</a></li>
 						</ul>
 					</div>
 				</div>

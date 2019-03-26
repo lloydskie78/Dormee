@@ -5,6 +5,7 @@
 
 			$src = 'public/img/propertie/1.jpg';
 			$url = 'dorms/' . $rec->id;
+			
 
 			if ($rec->photo() != null) {
 				$src = $rec->photo->first()->photo;
@@ -14,8 +15,9 @@
 
 			echo "
 				<div class='col-md-6'>
-					<div class='propertie-item set-bg'
-					style='background-image:url(\"" .  asset($src) ."\"); background-size: contain;'>
+
+					<div class='propertie-item'
+					style='background-image:url(" .  asset($src) . "); background-size: contain; background-position:center;'>
 						<div class='rent-notic'>Available</div>
 						<div class='propertie-info text-white'>
 							<div class='info-warp'>
@@ -38,6 +40,7 @@
 
 		}
 	@endphp
+
 @else 
 
  	@include('errors.no_dorms')
