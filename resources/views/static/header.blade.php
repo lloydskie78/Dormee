@@ -4,19 +4,12 @@
 			<div class="row">
 				<div class="col-lg-6 header-top-left">
 					<div class="top-info">
-						<i class="fa fa-phone"></i>
-						(+63) 928 097 6039
 					</div>
 					<div class="top-info">
-						<i class="fa fa-envelope"></i>
-						whydobirds1@gmail.com
 					</div>
 				</div>
 				<div class="col-lg-6 text-lg-right header-top-right">
-						<div class="user-panel">
-							<a href="register-page"><i class="fa fa-user-circle-o"></i> Register</a>
-							<a href="login-page"><i class="fa fa-sign-in"></i> Login</a>
-						</div>
+						<div class="user-panel">	</div>
 					</div>
 				</div>
 			</div>
@@ -25,10 +18,6 @@
 			<div class="row">
 				<div class="col-12">
 					<div class="site-navbar">
-						<a href="#" class="site-logo"><img src="img/logo.png" alt=""></a>
-						<div class="nav-switch">
-							<i class="fa fa-bars"></i>
-						</div>
 						<ul class="main-menu">
 							<li><a href="/">Home</a></li>
 							<li><a href="{{ URL::to('dorms') }}">FEATURED LISTING</a></li>
