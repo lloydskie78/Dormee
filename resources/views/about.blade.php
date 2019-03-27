@@ -8,18 +8,11 @@
 			<div class="row about-text">
 				<div class="col-xl-6 about-text-left">
 					<h5>ABOUT US</h5>
-					<p>Lorem ipsum dolor sitdoni amet, consectetur donald adipis elite for. Vivamus interdum ultrices augue. Aenean dos cursus lania. Duis et fringilla leonardo. Mauris mattis sem, debut curus risus viverra sed. Vestibul vitae velit felis. Nulla placerat orci ante casat. Pellentesque ac placerat . Cras urna duis, ornare cursus purus.</p>
-					<p>Ut vel auctor ligula. Aenean nec dui pretium, commodo ligula sit amet, faucibus purus. Mauris at dolor imperdiet, aliquet nisi non, vulputate est. Maecenas feugiat sagittis lacus. Mauris dinissim consequat tellus id congue. Mauris bendum mollis viverra. Vestibulum in leo placerat sollicitudin varius.</p>
+					<p>Dormee is a cross-platform system dedicated to delivering quality dorm recommendations to people within Davao City.</p>
 				</div>
 				<div class="col-xl-6 about-text-right">
 					<h5>OUR QUALITY</h5>
-					<p>Donec enim ipsum porta justo integer at velna vitae auctor integer congue magna at risus auctor purus unt pretium ligula rutrum integer sapien ultrice ligula luctus undo magna risus</p>
-					<ul class="about-list">
-						<li><i class="fa fa-check-circle-o"></i>Lorem ipsum dolor sitdoni amet, consectetur dont adipis elite vivamus interdum.</li>
-						<li><i class="fa fa-check-circle-o"></i>Integer pulvinar ante nulla, ac fermentum ex congue id vestibulum ensectetur. </li>
-						<li><i class="fa fa-check-circle-o"></i>Proin blandit nibh in quam semper iaculis lorem ipsum dolor salama ender.</li>
-						<li><i class="fa fa-check-circle-o"></i>Mauris at dolor imperdiet, aliquet nisi non, vulputate est sit amet.</li>
-					</ul>
+					
 				</div>
 			</div>
 		</div>
@@ -84,7 +77,7 @@
 					<div class="col-sm-4">
 						<div class="team-member">
 							<div class="member-pic">
-								<img src="{{URL::asset('public/img/team/1.jpg')}}" alt="#">
+								<img src="{{URL::asset('public/img/bg/evening.jpg')}}" alt="#">
 								<div class="member-social">
 									<a href=""><i class="fa fa-facebook"></i></a>
 									<a href=""><i class="fa fa-instagram"></i></a>
