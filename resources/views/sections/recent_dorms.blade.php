@@ -17,7 +17,7 @@
 				<div class='col-md-6'>
 
 					<div class='propertie-item'
-					style='background-image:url(" .  asset($src) . "); background-size: contain; background-position:center;'>
+					style='background-image:url(" .  asset($src) . ");'>
 						<div class='rent-notic'>Available</div>
 						<div class='propertie-info text-white'>
 							<div class='info-warp'>

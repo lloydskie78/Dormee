@@ -4,7 +4,7 @@
 @section('content')
 
 <!-- Hero section -->
-<section class="hero-section set-bg"
+<section class="hero-section "
 	style="
 	background-image:url('{{asset('public/img/bg/artist.jpg')}}');
 	background-attachment: fixed; 

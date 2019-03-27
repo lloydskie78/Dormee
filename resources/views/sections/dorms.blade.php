@@ -77,9 +77,7 @@ $dorms = \App\Dorm::all()->where('status', 0);
       <th>Description</th>
       <th>Price</th>
       <th>Filters</th>
-      <th>Photo</th>
       <th>Created At</th>
-      <th>Updated At</th>
     </tr>
   </thead>
   <!--Table head-->
@@ -91,7 +89,7 @@ $dorms = \App\Dorm::all()->where('status', 0);
     <?php
     foreach ($dorms as $dorm) {
       $filters = "";
-      foreach ($dorm->dormFilter()->get() as $filter) {
+      foreach ($dorm->dormFilters()->get() as $filter) {
         $filters .= $filter->name . ", " ;
       }
       $stat = $dorm->status == 1 ? "Verified" : $dorm->status == 0 ? "Unverified" : "Occupied";
@@ -106,9 +104,7 @@ $dorms = \App\Dorm::all()->where('status', 0);
       <td>" . $dorm->description . "</td>
       <td>" . $dorm->price . "</td>
       <td>" . $filters.  "</td>
-      <td><img src='" . $dorm->name . "'></td>
       <td>" . $dorm->created_at  . "</td>
-      <td>" . $dorm->updated_at  . "</td>
       </tr>
       ";
     }

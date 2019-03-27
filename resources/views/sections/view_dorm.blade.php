@@ -36,8 +36,8 @@
 
             @php 
             $src = "";
-            if (!is_null($dorm->photo())) {
-              $src = $dorm->photo()->get()->first()->photo;
+            if (!is_null($dorm->photos())) {
+              $src = $dorm->photos()->get()->first()->photo;
             } else { 
             $src = "public/img/property-9.jpg"; }
             @endphp
@@ -207,8 +207,8 @@
                 <ul class="list-group list-group-flush">
                   @php
 
-                  if (!is_null($dorm->dormFilter()->get()->first())) {
-                  if($dorm->dormFilter()->get()->first()->count > 0) {
+                  if (!is_null($dorm->dormFilters()->get()->first())) {
+                  if($dorm->dormFilters()->get()->first()->count > 0) {
                   foreach($dorm->dormFilter()->get() as $filter) {
                   echo "<li class='list-group-item'><i class='fa fa-cloud text-primary mr-2'></i>$filter->name</li>";
                 } 
@@ -226,7 +226,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-6">
-                <img alt="landlord photo" src="{{asset($dorm->landlord()->first()->photo)}}" class="img-thumbnail" />
+                <img alt="landlord photo" src="{{asset($dorm->landlord->photo)}}" class="img-thumbnail" />
               </div>
               <div class="col-md-6">
               <div class="table-responsive">
