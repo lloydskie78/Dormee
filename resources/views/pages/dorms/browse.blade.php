@@ -121,10 +121,12 @@ background-position: center;">
 
 
 <div class="row my-5">
-  <div class="col-md-3">
-   <button type="button" id="btnShowFilters" class="btn btn-primary mt-4">Filters&nbsp;<i class="fa fa-tag"></i></button>
+  <div class="col-md-12">
+   <button type="button" id="btnShowFilters" class="btn btn-primary mt-4 w-100">Filters&nbsp;<i class="fa fa-tag"></i></button>
  </div>
- <div class="col-md-9 hidden-box pull-right">
+</div>
+<div class="row mb-5">
+   <div class="col-md-12 hidden-box ml-5 pl-4">
 
   <div id="filtersBox" class="hidden-box m-auto" style="display: none;">
 
