@@ -36,18 +36,26 @@ slider5.oninput = function() {
 }
 
 
-
 var filtersBox = document.getElementById("filtersBox");
 var btnShowFilters = document.getElementById("btnShowFilters");
-
-btnShowFilters.addEventListener("click", showFilters);
 
 
 function showFilters() {
   filtersBox.style.display == "none" ? filtersBox.style.display = "block" : filtersBox.style.display = "none";
 }
 
+$("#btnShowAttributes").click(
+	function() {
+			$("#attrBox").slideToggle();	
+	}
+);
 
+
+$("#btnShowFilters").click(
+	function() {
+			$("#filtersBox").slideToggle();	
+	}
+);
 
 
 });

@@ -58,23 +58,23 @@ background-position: center;">
       </div>
 
 
+      <div class="col-md-3">
+
+       <span class="text-dark"><label class="radio-inline" for="gender-1">
+        <input type="radio" name="gender" id="gender-1" value="female">
+        Female
+      </label> </span>
+    </div>
+
     <div class="col-md-3">
+      <span class="text-dark"><label class="radio-inline" for="gender-2">
+        <input type="radio" name="gender" id="gender-2" value="mixed">
+        Mixed
+      </label></span>
+    </div>
 
-     <span class="text-dark"><label class="radio-inline" for="gender-1">
-      <input type="radio" name="gender" id="gender-1" value="female">
-      Female
-    </label> </span>
+    
   </div>
-
-  <div class="col-md-3">
-    <span class="text-dark"><label class="radio-inline" for="gender-2">
-      <input type="radio" name="gender" id="gender-2" value="mixed">
-      Mixed
-    </label></span>
-  </div>
-
-  
-</div>
 
 </div>
 
@@ -96,11 +96,13 @@ background-position: center;">
  <div class="col-md-12">
    <div class="py-4">
     <div class="pb-4">
-     Attributes
-   </div>
-
-   @include('forms.attributes')
- </div>
+      <button type="button" id="btnShowAttributes" class="btn btn-primary mt-4">Attributes</button>
+    </div>
+    <div id="attrBox" style="display:none;"> 
+      @include('forms.attributes')
+    </div>
+    
+  </div>
 </div>
 </div>
 
@@ -110,8 +112,8 @@ background-position: center;">
       Address <input id="address" type="text" class="form-control" placeholder="" name="address">
       
       <p>Mark location</p>
-     
-        <div id="map-canvas"></div>
+      
+      <div id="map-canvas"></div>
       
     </div>
   </div>
@@ -120,9 +122,9 @@ background-position: center;">
 
 <div class="row my-5">
   <div class="col-md-6">
-     <button type="button" id="btnShowFilters" class="btn btn-primary mt-4">Filters</button>
-  </div>
-  <div class="col-md-6 hidden-box pull-right">
+   <button type="button" id="btnShowFilters" class="btn btn-primary mt-4">Filters</button>
+ </div>
+ <div class="col-md-6 hidden-box pull-right">
 
   <div id="filtersBox" class="hidden-box m-auto" style="display: none;">
     <label class="checkbox" for="filters-0">
