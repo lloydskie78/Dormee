@@ -152,13 +152,14 @@ class DormController extends Controller
 
     public function search(Request $request)
     {
-        $dorms = DB::table('dorms')->where('name', 'like', '%' . $request->input('query') . '%')
-        ->orWhere('genders', '=', $request->input('gender'))
-        ->orWhere('curfew', '=', $request->input('curfew'))
-        ->orWhere('rooms', '=', $request->input('rooms'))
-        ->orWhere('address', 'like', '%' . $request->input('address' . '%'))
-        ->orWhere('description', 'like', '%' . $request->input('query'))
-        ->orWhere('price' , "<=", $request->input('budget'))->get();
+        DB::enableQueryLog();
+
+        $dorms = Dorm::where('name', 'like', '%' . $request->input('query') . '%')
+        ->where('genders', '=', $request->input('gender'))
+        ->where('curfew', '<=', $request->input('curfew'))
+        ->where('rooms', '=', $request->input('rooms'))
+        ->where('address', 'like', '%' . $request->input('address') . '%')
+        ->where('price' , "<=", (double) $request->input('budget'))->get();
         return view('pages.dorms.browse')->with(["dorms" => $dorms]);
     }
 

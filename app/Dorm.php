@@ -35,12 +35,7 @@ class Dorm extends Model
     }
 
     public function photos() {
-
-        if (DormPhoto::where('dorm_id', '=', $this->id)->count() === 0) {
-            return null;
-        } else {
-            return $this->hasMany(DormPhoto::class);
-        }
+            return $this->hasMany(DormPhoto::class, 'dorm_id', 'id');
     }
 
     public function reviews() {

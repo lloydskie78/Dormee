@@ -38,7 +38,7 @@ background-position: center;">
 
   <div class="row mt-4">
     <div class="col-md-12">
-      Curfew <input id="curfew" name="curfew" type="time" placeholder="curfew" class="form-control input-md" required>
+      Curfew <input id="curfew" name="curfew" type="text" placeholder="curfew" class="form-control input-md" required>
     </div>
   </div>
 
@@ -156,26 +156,29 @@ background-position: center;">
 
   if (!isset($dorms)) {
   $dorms = \App\Dorm::all()->where('status', 1);
-}
+} 
 
-$i = 0;
+@endphp
+
+
+
+<?php
+if($dorms->count() > 0) {
+  $i = 0;
 $src = "public/img/property-9.jpg";
 foreach($dorms as $dorm) {
-if ($i + 1 % 3 == 0) {
-if (!is_null($dorm->photo())) {
-$src = $dorm->photo()->get()->first()->photo;
+
+if ($dorm->photos()->exists()) {
+$src = $dorm->photos()->get()->first()->photo;
 }
-
-
-echo "
-
-<div class='row mt-5 space-above w-100'>";
+if ($i + 1 % 3 == 0) {
+echo "<div class='row mt-5 space-above w-100'>";
 }
 
 echo "<div class='col-md-4 mt-3'>
 
 <div class='card mt-5 w-100'>
-  <img class='card-img-top' src='" . asset($src) . "'>
+  <img class='card-img-top' src='" . asset($src) . "' style='height:200px;'>
   <div class='card-body'>
     <h5 class='card-title'>$dorm->name</h5>
     <p class='card-text'>$dorm->address</p>
@@ -188,11 +191,23 @@ echo "<div class='col-md-4 mt-3'>
 if ($i + 1 % 3 == 0) {
 echo "</div>";
 } 
-}
+
+} 
+} else { echo 
+
+  "<center><span class='text-center'><i class='text-center fa fa-frown-o fa-5x faa-wrench animated'></i>
+<p>Sorry! No dorms are available for this search.</p></span></center>"; 
+
+
+ }
+
+?>
+
+  
 
 
 
-@endphp
+
 
 </div>
 @endsection
