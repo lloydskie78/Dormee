@@ -31,14 +31,14 @@
       </div>
     </div>
     <div class="form-group">
-      <label class="col-md-5 control-label" for="address">Specifically Mark your Dormitory Address:</label>
+      <label class="col-md-5 control-label" for="address">Mark your Dormitory Address:</label>
       <div class="col-md-12">
 
-          <div id="map-canvas" style="width:50%; margin: 0 auto;"></div>
+         
 
         <div style="width:40%; margin: 0 auto;">
           
-          <div id="map-canvas" style="width:70%; margin: 0 auto;"></div>
+          <div id="map-canvas" style="width:70%; height: 250px;margin: 0 auto;"></div>
         </div>
 
       </div>
@@ -134,7 +134,7 @@
     <div class="form-group">
      <label class="col-md-4 control-label" for="filters">Filters</label>
 
-     <div class="col-md-4 ml-5"> @include('forms.dorm_filters')</div>
+     <div class="col-md-5 ml-5"> @include('forms.dorm_filters')</div>
      
     </div>
 

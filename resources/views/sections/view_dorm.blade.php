@@ -7,26 +7,22 @@
       <div class="alert alert-primary">$msg</div>
       @endif
 
-      
-      <h4 class="text-center mb-4">Viewing Dorm {{$dorm->id}}</h4>
-      @if(Auth::check())
+           @if(Auth::check())
       @if(Auth::user()->isAdmin() and $dorm->status == "0")
       <a href="verify/{{$dorm->id}}" class="btn btn-primary">Verify Dorm</a>
       @endif
 
-
-
-      <hr> 
-      <a href="bookmark/{{$dorm->id}}" class="btn btn-primary">Bookmark</a>
+      <a href="bookmark/{{$dorm->id}}" class="btn btn-primary pull-right">Bookmark</a>
       @endif
+      
     </div>
   </div>
 </div>
 <div class="py-5">
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="col-md-8">
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade w-100" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -39,7 +35,7 @@
             if (!is_null($dorm->photos())) {
             $src = $dorm->photos()->get()->first()->photo;
           } else { 
-          $src = "public/img/property-9.jpg"; }
+          $src = "public/img/bg/blue_fan.jpg"; }
           @endphp
 
 
@@ -63,90 +59,21 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-</div>
-<div class="py-3">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-6">
-            <h4 class="mb-2">Address</h4>
-            {{$dorm->address}}
 
-            <iframe width="100%" height="400" src="https://maps.google.com/maps?q={{$dorm->address}}, Davao City, 8000 Davao del Sur&amp;z=14&amp;output=embed" scrolling="yes" frameborder="0"></iframe>
-          </div>
-          <div class="col-md-6">
-            <h4 class="py-3">Attributes<br></h4>
-            @php
-
-            $udar = new \App\UserDormAttributeRating;
-            $clean = $udar->getSpecificRatings($dorm->id, 1);
-            $safe = $udar->getSpecificRatings($dorm->id, 2);
-            $amb = $udar->getSpecificRatings($dorm->id, 3);
-            $fac = $udar->getSpecificRatings($dorm->id, 4);
-            $acc = $udar->getSpecificRatings($dorm->id, 5);
-
-            @endphp
-
-            <table class="table table-hover table-striped">
-              <tr>
-                <td>Cleanliness</td>
-                <td>{{is_null($clean[0]["avg"])? 1 : $clean[0]["avg"]}}</td>
-              </tr>
-              <tr>
-               <td>Safety</td>
-               <td>{{is_null($safe[0]["avg"]) ? 1 : $safe[0]["avg"]}}</td>
-             </tr>
-             <tr>
-               <td>Ambiance</td>
-               <td>{{is_null($amb[0]["avg"]) ? 1 : $amb[0]["avg"]}}</td>
-             </tr>
-             <tr>
-               <td>Facilities</td>
-               <td>{{is_null($fac[0]["avg"]) ? 1 : $fac[0]["avg"]}}</td>
-             </tr>
-             <tr>
-               <td>Access to Transport</td>
-               <td>{{is_null($acc[0]["avg"]) ? 1 : $acc[0]["avg"]}}</td>
-             </tr>
-           </table>
-         </div>
-       </div>
-     </div>
-   </div>
- </div>
-</div>
-<div class="py-0">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-6">
-          </div>
-          <div class="col-md-6">
-
-          </div>
+      <div class="row mt-5">
+        <div class="col-md-7 pl-5">
+           <h4 class=" my-4">{{$dorm->name}}</h4>
+ 
+        </div>
+        <div class="col-md-5 ">
+          <div class="box text-white">{{$dorm->price}} Php / month</div>
         </div>
       </div>
+     
     </div>
-  </div>
-</div>
-<div class="pt-4">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h4 class="">Details</h4>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="py-2">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
+
+
+      <div class="col-md-4">
         <div class="card text-center">
           <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
@@ -166,7 +93,7 @@
               <div class="tab-pane fade show" id="tabone" role="tabpanel">
                 <div class="row">
                   <div class="col-md-12">
-                    <table class="table">
+                    <table class="table table-striped">
                       <tr>
                         <td>Name</td>
                         <td>{{$dorm->name}}</td>
@@ -253,8 +180,72 @@
       </div>
     </div>
   </div>
+
+
+  </div>
 </div>
 </div>
+
+
+<div class="py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row">
+         <div class="col-md-6">
+            <h4 class="py-3">Description<br></h4>
+           
+         </div>
+          <div class="col-md-6">
+            <h4 class="py-3">Attributes<br></h4>
+            @php
+
+            $udar = new \App\UserDormAttributeRating;
+            $clean = $udar->getSpecificRatings($dorm->id, 1);
+            $safe = $udar->getSpecificRatings($dorm->id, 2);
+            $amb = $udar->getSpecificRatings($dorm->id, 3);
+            $fac = $udar->getSpecificRatings($dorm->id, 4);
+            $acc = $udar->getSpecificRatings($dorm->id, 5);
+
+            @endphp
+
+            <table class="table table-hover table-striped">
+              <tr>
+                <td>Cleanliness</td>
+                <td>{{is_null($clean[0]["avg"])? 1 : $clean[0]["avg"]}}</td>
+              </tr>
+              <tr>
+               <td>Safety</td>
+               <td>{{is_null($safe[0]["avg"]) ? 1 : $safe[0]["avg"]}}</td>
+             </tr>
+             <tr>
+               <td>Ambiance</td>
+               <td>{{is_null($amb[0]["avg"]) ? 1 : $amb[0]["avg"]}}</td>
+             </tr>
+             <tr>
+               <td>Facilities</td>
+               <td>{{is_null($fac[0]["avg"]) ? 1 : $fac[0]["avg"]}}</td>
+             </tr>
+             <tr>
+               <td>Access to Transport</td>
+               <td>{{is_null($acc[0]["avg"]) ? 1 : $acc[0]["avg"]}}</td>
+             </tr>
+           </table>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+            <h4 class="mb-2">Address</h4>
+            {{$dorm->address}}
+
+            <iframe width="100%" height="400" src="https://maps.google.com/maps?q={{$dorm->address}}, Davao City, 8000 Davao del Sur&amp;z=14&amp;output=embed" scrolling="yes" frameborder="0"></iframe>
+   
+  </div>
 </div>
 
 <div class="pb-4">

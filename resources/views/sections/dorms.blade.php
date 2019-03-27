@@ -75,7 +75,6 @@ $dorms = \App\Dorm::all()->where('status', 0);
       <th>Address</th>
       <th>Business Permit</th>
       <th>Price</th>
-      <th>Filters</th>
       <th>Created At</th>
       <th>Action</th>
     </tr>
@@ -102,7 +101,6 @@ $dorms = \App\Dorm::all()->where('status', 0);
       <td>" . $dorm->address . "</td>
       <td>" . $dorm->business_permit . "</td>
       <td>" . $dorm->price . "</td>
-      <td>" . $filters.  "</td>
       <td>" . $dorm->created_at  . "</td>
       <td> " . '<a href="#" class="btn btn-sm btn-info"> View Map</a>' . "</td>
       </tr>
