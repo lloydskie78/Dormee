@@ -27,7 +27,7 @@ background-position: center;">
       </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-4">
       <div class="col-md-12">
        <div class="input-group">
         Budget <input type="number" class="form-control" placeholder="" name="budget" min="0">
@@ -53,7 +53,7 @@ background-position: center;">
         <div class="col-md-3">
          <span class="text-dark"><label class="radio-inline" for="gender-0">
           <input type="radio" name="gender" id="gender-0" value="male" checked="checked">
-          Male
+          <i class="fa fa-mars"></i>&nbsp;Male
         </label> </span>
       </div>
 
@@ -62,18 +62,18 @@ background-position: center;">
 
        <span class="text-dark"><label class="radio-inline" for="gender-1">
         <input type="radio" name="gender" id="gender-1" value="female">
-        Female
+         <i class="fa fa-venus"></i>&nbsp;Female
       </label> </span>
     </div>
 
     <div class="col-md-3">
       <span class="text-dark"><label class="radio-inline" for="gender-2">
         <input type="radio" name="gender" id="gender-2" value="mixed">
-        Mixed
+         <i class="fa fa-venus-mars"></i>&nbsp;Mixed
       </label></span>
     </div>
 
-    
+
   </div>
 
 </div>
@@ -96,12 +96,12 @@ background-position: center;">
  <div class="col-md-12">
    <div class="py-4">
     <div class="pb-4">
-      <button type="button" id="btnShowAttributes" class="btn btn-primary mt-4">Attributes</button>
+      <button type="button" id="btnShowAttributes" class="btn green text-white mt-4 w-100">Attributes&nbsp;<i class="fa fa-list-alt"></i></button>
     </div>
     <div id="attrBox" style="display:none;"> 
       @include('forms.attributes')
     </div>
-    
+
   </div>
 </div>
 </div>
@@ -112,7 +112,7 @@ background-position: center;">
       Address <input id="address" type="text" class="form-control" placeholder="" name="address">
       
       <p>Mark location</p>
-      
+
       <div id="map-canvas"></div>
       
     </div>
@@ -121,69 +121,120 @@ background-position: center;">
 
 
 <div class="row my-5">
-  <div class="col-md-6">
-   <button type="button" id="btnShowFilters" class="btn btn-primary mt-4">Filters</button>
+  <div class="col-md-3">
+   <button type="button" id="btnShowFilters" class="btn btn-primary mt-4">Filters&nbsp;<i class="fa fa-tag"></i></button>
  </div>
- <div class="col-md-6 hidden-box pull-right">
+ <div class="col-md-9 hidden-box pull-right">
 
   <div id="filtersBox" class="hidden-box m-auto" style="display: none;">
-    <label class="checkbox" for="filters-0">
-      <input type="checkbox" name="filters[]" id="filters-0" value="1">
-      Roommates
-    </label>
-    <label class="checkbox" for="filters-1">
+
+    <div class="row"> 
+      <div class="col-md-4"> <label class="checkbox" for="filters-0">
+        <input type="checkbox" name="filters[]" id="filters-0" value="1">
+        <i class="fa fa-user-circle-o"></i>&nbsp;Roommates
+      </label>
+    </div>
+    <div class="col-md-4">  <label class="checkbox" for="filters-1">
       <input type="checkbox" name="filters[]" id="filters-1" value="2">
-      Guests Allowed
-    </label>
-    <label class="checkbox" for="filters-2">
-      <input type="checkbox" name="filters[]" id="filters-2" value="3">
-      Pets
-    </label>
-    <label class="checkbox" for="filters-3">
-      <input type="checkbox" name="filters[]" id="filters-3" value="4">
-      Kitchen
-    </label>
-    <label class="checkbox" for="filters-4">
-      <input type="checkbox" name="filters[]" id="filters-4" value="5">
-      Electric Fan
-    </label>
-    <label class="checkbox" for="filters-5">
-      <input type="checkbox" name="filters[]" id="filters-5" value="6">
-      Air-con
-    </label>
-    <label class="checkbox" for="filters-6">
-      <input type="checkbox" name="filters[]" id="filters-6" value="7">
-      Laundromat
-    </label>
-    <label class="checkbox" for="filters-7">
-      <input type="checkbox" name="filters[]" id="filters-7" value="8">
-      Internet
-    </label>
-    <label class="checkbox" for="filters-8">
-      <input type="checkbox" name="filters[]" id="filters-8" value="9">
-      TV
-    </label>
-    <label class="checkbox" for="filters-9">
-      <input type="checkbox" name="filters[]" id="filters-9" value="10">
-      Closet
-    </label>
-    <label class="checkbox" for="filters-10">
-      <input type="checkbox" name="filters[]" id="filters-10" value="11">
-      Parking
-    </label>
-    <label class="checkbox" for="filters-11">
-      <input type="checkbox" name="filters[]" id="filters-11" value="12">
-      Elevator
-    </label>
-    <label class="checkbox" for="filters-12">
-      <input type="checkbox" name="filters[]" id="filters-12" value="bathtub">
-      Wi-Fi
-    </label>
-    <label class="checkbox" for="filters-13">
-      <input type="checkbox" name="filters[]" id="filters-13" value="14">
-      Bathroom
+      <i class="fa fa-male"></i>&nbsp;Guests Allowed
     </label>
   </div>
+  <div class="col-md-4">   <label class="checkbox" for="filters-2">
+    <input type="checkbox" name="filters[]" id="filters-2" value="3">
+     <i class="fa fa-github-alt"></i>&nbsp;Pets
+  </label> 
+</div>
+</div>
+<div class="row"> 
+  <div class="col-md-4"> 
+    <label class="checkbox" for="filters-3">
+      <input type="checkbox" name="filters[]" id="filters-3" value="4">
+      <i class="fa fa-cutlery"></i>&nbsp;Kitchen
+    </label>
+  </div>
+  <div class="col-md-4"> 
+    <label class="checkbox" for="filters-4">
+      <input type="checkbox" name="filters[]" id="filters-4" value="5">
+      <i class="fa fa-certificate"></i>&nbsp;Electric Fan
+    </label>
+  </div>
+  <div class="col-md-4">
+    <label class="checkbox" for="filters-5">
+      <input type="checkbox" name="filters[]" id="filters-5" value="6">
+      <i class="fa fa-bars"></i>&nbsp;Air-con
+    </label>
+  </div>
+</div>
+<div class="row"> 
+  <div class="col-md-4">
+    <label class="checkbox" for="filters-6">
+      <input type="checkbox" name="filters[]" id="filters-6" value="7">
+      <i class="fa fa-tint"></i>&nbsp;Laundromat
+    </label>
+  </div>
+  <div class="col-md-4"> 
+   <label class="checkbox" for="filters-7">
+    <input type="checkbox" name="filters[]" id="filters-7" value="8">
+    <i class="fa fa-rss"></i>&nbsp;Internet
+  </label>
+</div>
+<div class="col-md-4"> 
+  <label class="checkbox" for="filters-8">
+    <input type="checkbox" name="filters[]" id="filters-8" value="9">
+    <i class="fa fa-tablet"></i>&nbsp;TV
+  </label>
+</div>
+</div>
+<div class="row"> 
+  <div class="col-md-4"> 
+   <label class="checkbox" for="filters-9">
+    <input type="checkbox" name="filters[]" id="filters-9" value="10">
+    <i class="fa fa-black-tie"></i>&nbsp;Closet
+  </label>
+</div>
+<div class="col-md-4">
+  <label class="checkbox" for="filters-10">
+    <input type="checkbox" name="filters[]" id="filters-10" value="11">
+    <i class="fa fa-truck"></i>&nbsp;Parking
+  </label>
+</div>
+<div class="col-md-4"> 
+  <label class="checkbox" for="filters-11">
+    <input type="checkbox" name="filters[]" id="filters-11" value="12">
+    <i class="fa fa-columns"></i>&nbsp;Elevator
+  </label>
+</div>
+</div>
+<div class="row"> 
+  <div class="col-md-4">
+    <label class="checkbox" for="filters-12">
+      <input type="checkbox" name="filters[]" id="filters-12" value="bathtub">
+      <i class="fa fa-wifi"></i>&nbsp;Wi-Fi
+    </label> 
+  </div>
+  <div class="col-md-4">    
+    <label class="checkbox" for="filters-13">
+      <input type="checkbox" name="filters[]" id="filters-13" value="14">
+      <i class="fa fa-bath"></i>&nbsp;Bathroom
+    </label>
+  </div>
+  <div class="col-md-4"> </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
 </div>
 </div>
 
