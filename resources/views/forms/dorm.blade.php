@@ -31,16 +31,16 @@
       </div>
     </div>
     <div class="form-group">
-      <label class="col-md-5 control-label" for="address">Specifically Mark your Dormitory Location:</label>
+      <label class="col-md-5 control-label" for="address">Specifically Mark your Dormitory Address:</label>
       <div class="col-md-12">
-<<<<<<< HEAD
-          <div id="map-canvas" style="width:50%; margin: 0 auto; margin-top: 1rem;"></div>
-=======
+
+          <div id="map-canvas" style="width:50%; margin: 0 auto;"></div>
+
         <div style="width:40%; margin: 0 auto;">
           
           <div id="map-canvas" style="width:70%; margin: 0 auto;"></div>
         </div>
->>>>>>> a8c5ea6ba75efe2eb5500aa01aabd5535d6ed543
+
       </div>
       
     </div>
@@ -100,68 +100,6 @@
       </div>
     </div>
 
-    <!-- Multiple Checkboxes (inline) -->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="filters">Filters</label>
-      <div class="col-md-4">
-        <label class="checkbox-inline" for="filters-0">
-          <input type="checkbox" name="filters[]" id="filters-0" value="1">
-          Roommates
-        </label>
-        <label class="checkbox-inline" for="filters-1">
-          <input type="checkbox" name="filters[]" id="filters-1" value="2">
-          Guests Allowed
-        </label>
-        <label class="checkbox-inline" for="filters-2">
-          <input type="checkbox" name="filters[]" id="filters-2" value="3">
-          Pets
-        </label>
-        <label class="checkbox-inline" for="filters-3">
-          <input type="checkbox" name="filters[]" id="filters-3" value="4">
-          Kitchen
-        </label>
-        <label class="checkbox-inline" for="filters-4">
-          <input type="checkbox" name="filters[]" id="filters-4" value="5">
-          Electric Fan
-        </label>
-        <label class="checkbox-inline" for="filters-5">
-          <input type="checkbox" name="filters[]" id="filters-5" value="6">
-          Air-con
-        </label>
-        <label class="checkbox-inline" for="filters-6">
-          <input type="checkbox" name="filters[]" id="filters-6" value="7">
-          Laundromat
-        </label>
-        <label class="checkbox-inline" for="filters-7">
-          <input type="checkbox" name="filters[]" id="filters-7" value="8">
-          Internet
-        </label>
-        <label class="checkbox-inline" for="filters-8">
-          <input type="checkbox" name="filters[]" id="filters-8" value="9">
-          TV
-        </label>
-        <label class="checkbox-inline" for="filters-9">
-          <input type="checkbox" name="filters[]" id="filters-9" value="10">
-          Closet
-        </label>
-        <label class="checkbox-inline" for="filters-10">
-          <input type="checkbox" name="filters[]" id="filters-10" value="11">
-          Parking
-        </label>
-        <label class="checkbox-inline" for="filters-11">
-          <input type="checkbox" name="filters[]" id="filters-11" value="12">
-          Elevator
-        </label>
-        <label class="checkbox-inline" for="filters-12">
-          <input type="checkbox" name="filters[]" id="filters-12" value="bathtub">
-          Wi-Fi
-        </label>
-        <label class="checkbox-inline" for="filters-13">
-          <input type="checkbox" name="filters[]" id="filters-13" value="14">
-          Bathroom
-        </label>
-      </div>
-    </div>
 
     <!-- Multiple Radios (inline) -->
     <div class="form-group">
@@ -192,12 +130,22 @@
         <input type="hidden" class="form-control" name="lng" id="lng">
     </div>
 
-    <!-- Button -->
+        <!-- Multiple Checkboxes (inline) -->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="submit"></label>
-      <div class="col-md-4">
-        <button id="submit" name="submit" class="btn btn-primary">Submit</button>
+     <label class="col-md-4 control-label" for="filters">Filters</label>
+
+     <div class="col-md-4 ml-5"> @include('forms.dorm_filters')</div>
+     
+    </div>
+
+
+    <!-- Button -->
+    <div class="form-group mt-5">
+      <label class="col-md-2 control-label" for="submit"></label>
+      <div class="col-md-8">
+        <button id="submit" name="submit" class="btn btn-primary w-100">Submit</button>
       </div>
+      <label class="col-md-2 control-label" for="submit"></label>
     </div>
 
   </fieldset>
