@@ -74,7 +74,6 @@ $dorms = \App\Dorm::all()->where('status', 0);
       <th>Name</th>
       <th>Address</th>
       <th>Business Permit</th>
-      <th>Description</th>
       <th>Price</th>
       <th>Filters</th>
       <th>Created At</th>
@@ -101,7 +100,6 @@ $dorms = \App\Dorm::all()->where('status', 0);
       <td>" . $dorm->name . "</td>
       <td>" . $dorm->address . "</td>
       <td>" . $dorm->business_permit . "</td>
-      <td>" . $dorm->description . "</td>
       <td>" . $dorm->price . "</td>
       <td>" . $filters.  "</td>
       <td>" . $dorm->created_at  . "</td>

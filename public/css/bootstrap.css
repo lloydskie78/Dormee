@@ -7005,6 +7005,12 @@ background-color: #282828;
   background-size: cover;
 }
 
+/* Text */
+
+.text-shadow {
+    text-shadow: 0px 1px 4px rgba(15,15,15,0.94);
+}
+
 /* Fonts */
 
 @font-face {
@@ -7027,7 +7033,12 @@ background-color: #282828;
 }
 
 .bg-opacity {
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.3);
+}
+
+.blur {
+   filter: blur(8px);
+  -webkit-filter: blur(8px);
 }
 
 .set-bg {
