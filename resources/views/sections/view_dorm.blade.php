@@ -267,13 +267,14 @@
        if (!empty($reviews) && $reviews->count() > 0) {
        $i = 0;
        foreach($reviews as $review) {
+       $name = $review->user->first_name . $review->user->last_name;
        echo "<div class='row'>
         <div class='col-md-2'>
           <img class='comment-img' src='http://2.bp.blogspot.com/-WCkoxnPWXcE/TbZTDG0UI-I/AAAAAAAAAAQ/mukPK0QOVLI/s1600/hotlink.jpg'>
         </div>
         <div class='col-md-10 alert alert-primary'>
           <div>
-           <h6>Posted by   on $review->created_at</h6> 
+           <h6>Posted by $name on $review->created_at</h6> 
          </div>
          <p>$review->review</p>
          <p class='pull-right'><a href=' '><i class='glyphicon glyphicon-flag'> </i></a></p>

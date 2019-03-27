@@ -128,8 +128,7 @@ class DormController extends Controller
      */
     public function show($id)
     {
-        $user = new UserDormReview();
-        return view('pages.dorms.show')->with(["dorm" => Dorm::find($id), "reviews" => DB::table('user_dorm_reviews')->where('dorm_id', '=', $id)->get(), 'users' => $user->user]);
+        return view('pages.dorms.show')->with(["dorm" => Dorm::find($id), "reviews" => UserDormReview::where('dorm_id', '=', $id)->get()]);
     }
 
     public function browse()
