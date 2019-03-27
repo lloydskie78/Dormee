@@ -7,7 +7,7 @@
       <div class="alert alert-primary">$msg</div>
       @endif
 
-           @if(Auth::check())
+      @if(Auth::check())
       @if(Auth::user()->isAdmin() and $dorm->status == "0")
       <a href="verify/{{$dorm->id}}" class="btn btn-primary">Verify Dorm</a>
       @endif
@@ -32,7 +32,7 @@
 
             @php 
             $src = "";
-            if (!is_null($dorm->photos())) {
+            if ($dorm->photos()->exists()) {
             $src = $dorm->photos()->get()->first()->photo;
           } else { 
           $src = "public/img/bg/blue_fan.jpg"; }
@@ -62,124 +62,117 @@
 
       <div class="row mt-3">
         <div class="col-md-7 pl-5">
-           <h4 class="mt-2">{{$dorm->name}}</h4>
-            <h6 class="mt-3"> <i class="fa fa-map"></i> &nbsp;{{$dorm->address}}</h6>
-        </div>
-        <div class="col-md-5">
-          <div class="box text-white">{{$dorm->price}} Php / month</div>
-        </div>
+         <h4 class="mt-2">{{$dorm->name}}</h4>
+         <p class="mt-3"> <i class="fa fa-map-marker fa-lg"></i> &nbsp;{{$dorm->address}}</p>
+       </div>
+       <div class="col-md-5">
+        <div class="box text-white">{{$dorm->price}} Php / month</div>
       </div>
-     
     </div>
+    
+  </div>
 
 
-      <div class="col-md-4">
-        <div class="card text-center">
-          <div class="card-header">
-            <ul class="nav nav-tabs card-header-tabs">
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" data-target="#tabone">Basic</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" data-target="#tabtwo">Filters</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" data-target="#tabthree">Landlord</a>
-              </li>
-            </ul>
-          </div>
-          <div class="card-body">
-            <div class="tab-content mt-2">
-              <div class="tab-pane fade show" id="tabone" role="tabpanel">
-                <div class="row">
-                  <div class="col-md-12">
-                    <table class="table table-inverse">
-                      <tr>
-                        <td>Name</td>
-                        <td>{{$dorm->name}}</td>
-                      </tr>
-                      <tr>
-                        <td>Address</td>
-                        <td>{{$dorm->address}}</td>
-                      </tr>
-                      <tr>
-                        <td>Business Permit</td>
-                        <td>{{$dorm->business_permit}}</td>
-                      </tr>
-                      <tr>
-                        <td>Monthly Rent</td>
-                        <td>{{$dorm->price}}</td>
-                      </tr>
-                      <tr>
-                        <td>Curfew</td>
-                        <td>{{$dorm->curfew}}</td>
-                      </tr>
-                      <tr>
-                        <td>Rooms</td>
-                        <td>{{$dorm->rooms}}</td>
-                      </tr>
+  <div class="col-md-4">
+    <div class="card text-center">
+      <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" data-target="#tabone">Basic</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" data-target="#tabtwo">Filters</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" data-target="#tabthree">Landlord</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body">
+        <div class="tab-content mt-2">
+          <div class="tab-pane fade show" id="tabone" role="tabpanel">
+            <div class="row">
+              <div class="col-md-12">
+                <table class="table table-inverse">
+                  <tr>
+                    <td>Name</td>
+                    <td>{{$dorm->name}}</td>
+                  </tr>
+                  <tr>
+                    <td>Address</td>
+                    <td>{{$dorm->address}}</td>
+                  </tr>
+                  <tr>
+                    <td>Business Permit</td>
+                    <td>{{$dorm->business_permit}}</td>
+                  </tr>
+                  <tr>
+                    <td>Monthly Rent</td>
+                    <td>{{$dorm->price}}</td>
+                  </tr>
+                  <tr>
+                    <td>Curfew</td>
+                    <td>{{$dorm->curfew}}</td>
+                  </tr>
+                  <tr>
+                    <td>Rooms</td>
+                    <td>{{$dorm->rooms}}</td>
+                  </tr>
 
 
-                    </table>
+                </table>
 
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="tabtwo" role="tabpanel">
-
-                <ul class="list-group list-group-flush">
-                  @php
-
-                  if (!is_null($dorm->dormFilters()->first())) {
-                  if($dorm->dormFilters()->first()->count > 0) {
-
-                  foreach($dorm->dormFilter()->get() as $filter) {
-                  echo "
-                  <li class='list-group-item'>
-                    <i class='fa fa-cloud text-primary mr-2'></i>
-                    $filter->name</li>";
-                  } 
-                } else {  echo "No filters."; } 
-              } else {  echo "No filters."; } 
-
-              @endphp
-
-            </ul>
-          </div>
-          <div class="tab-pane fade" id="tabthree" role="tabpanel">
-            <h4>
-              About the Landlord
-            </h4>
-            <div class="container">
-              <div class="row">
-                <div class="col-md-6">
-                  <img alt="landlord photo" src="{{asset($dorm->landlord->photo)}}" class="img-thumbnail" />
-                </div>
-                <div class="col-md-6">
-                  <div class="table-responsive">
-                    <table class="table">
-                      <tr>
-                        <td><b>Name</b></td>
-                        <td>{{$dorm->getLandlordName()}}</td>
-                      </tr>
-                      <tr>
-                        <td><b>About</b></td>
-                        <td>{{$dorm->landlord()->first()->about}}</td>
-                      </tr>
-                    </table>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
+          <div class="tab-pane fade" id="tabtwo" role="tabpanel">
+
+            <ul class="list-group list-group-flush">
+              @php
+
+              if (!is_null($dorm->dormFilters()->first())) {
+              if($dorm->dormFilters()->first()->count > 0) {
+
+              foreach($dorm->dormFilter()->get() as $filter) {
+              echo "
+              <li class='list-group-item'>
+                <i class='fa fa-cloud text-primary mr-2'></i>
+                $filter->name</li>";
+              } 
+            } else {  echo "No filters."; } 
+          } else {  echo "No filters."; } 
+
+          @endphp
+
+        </ul>
+      </div>
+      <div class="tab-pane fade" id="tabthree" role="tabpanel">
+        <h4 class="my-4 mb-5">
+          About the Landlord
+        </h4>
+        
+        <div class="row">
+          <div class="col-md-6">
+            <img alt="landlord photo" src="{{asset($dorm->landlord->photo)}}" class="comment-img" />
+          </div>
+          <div class="col-md-6">
+            
+            <p><b>Name</b></p>
+            <p>{{$dorm->getLandlordName()}}</p>
+            <p><b>About</b></p>
+            <p>{{$dorm->landlord()->first()->about}}</p>
+            
+          </div>
         </div>
       </div>
     </div>
-
   </div>
+</div>
+
+</div>
 
 
-  </div>
+</div>
 </div>
 </div>
 
@@ -188,94 +181,96 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-<h4 class="py-3">Attributes<br></h4>
-            @php
+        <h4 class="py-3">Attributes<br></h4>
+        @php
 
-            $udar = new \App\UserDormAttributeRating;
-            $clean = $udar->getSpecificRatings($dorm->id, 1);
-            $safe = $udar->getSpecificRatings($dorm->id, 2);
-            $amb = $udar->getSpecificRatings($dorm->id, 3);
-            $fac = $udar->getSpecificRatings($dorm->id, 4);
-            $acc = $udar->getSpecificRatings($dorm->id, 5);
+        $udar = new \App\UserDormAttributeRating;
+        $clean = $udar->getSpecificRatings($dorm->id, 1);
+        $safe = $udar->getSpecificRatings($dorm->id, 2);
+        $amb = $udar->getSpecificRatings($dorm->id, 3);
+        $fac = $udar->getSpecificRatings($dorm->id, 4);
+        $acc = $udar->getSpecificRatings($dorm->id, 5);
 
-            @endphp
-   <table class="table table-hover table-striped">
-              <tr>
-                <td>Cleanliness</td>
-                <td>{{is_null($clean[0]["avg"])? 1 : $clean[0]["avg"]}}</td>
-              </tr>
-              <tr>
-               <td>Safety</td>
-               <td>{{is_null($safe[0]["avg"]) ? 1 : $safe[0]["avg"]}}</td>
-             </tr>
-             <tr>
-               <td>Ambiance</td>
-               <td>{{is_null($amb[0]["avg"]) ? 1 : $amb[0]["avg"]}}</td>
-             </tr>
-             <tr>
-               <td>Facilities</td>
-               <td>{{is_null($fac[0]["avg"]) ? 1 : $fac[0]["avg"]}}</td>
-             </tr>
-             <tr>
-               <td>Access to Transport</td>
-               <td>{{is_null($acc[0]["avg"]) ? 1 : $acc[0]["avg"]}}</td>
-             </tr>
-           </table>
-</div>
+        @endphp
+        <table class="table table-hover table-striped">
+          <tr>
+            <td><i class="fa 
+              fa-trash-o fa-lg"></i>&nbsp;Cleanliness</td>
+              <td>{{is_null($clean[0]["avg"])? 1 : $clean[0]["avg"]}}</td>
+            </tr>
+            <tr>
+             <td><i class="fa fa-unlock-alt fa-lg"></i>&nbsp;Safety</td>
+             <td>{{is_null($safe[0]["avg"]) ? 1 : $safe[0]["avg"]}}</td>
+           </tr>
+           <tr>
+             <td><i class="fa fa-picture-o fa-lg"></i>&nbsp;Ambiance</td>
+             <td>{{is_null($amb[0]["avg"]) ? 1 : $amb[0]["avg"]}}</td>
+           </tr>
+           <tr>
+             <td><i class="fa fa-coffee fa-lg"></i>&nbsp;Facilities</td>
+             <td>{{is_null($fac[0]["avg"]) ? 1 : $fac[0]["avg"]}}</td>
+           </tr>
+           <tr>
+             <td><i class="fa 
+              fa-subway fa-lg"></i>&nbsp;Access to Transport</td>
+              <td>{{is_null($acc[0]["avg"]) ? 1 : $acc[0]["avg"]}}</td>
+            </tr>
+          </table>
+        </div>
 
+      </div>
     </div>
   </div>
-</div>
 
-<div class="py-3 mt-3">
-  <div class="container">
+  <div class="py-3 mt-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+         
+          
+          <h4 class="py-3">Description<br></h4>
+          <hr>
+
+          <p>
+            {{$dorm->description}}
+          </p>
+          
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container mt-5">
     <div class="row">
       <div class="col-md-8">
-       
+        <h4 class="mb-2">Address</h4>
+        <hr>
         
-            <h4 class="py-3">Description<br></h4>
-            <hr>
-
-            <p>
-            {{$dorm->description}}
-            </p>
-           
-     </div>
-
-
-   </div>
- </div>
-</div>
-
-
-<div class="container mt-5">
-  <div class="row">
-  <div class="col-md-8">
-            <h4 class="mb-2">Address</h4>
-            <hr>
-         
-
-            <iframe width="100%" height="400" src="https://maps.google.com/maps?q={{$dorm->address}}, Davao City, 8000 Davao del Sur&amp;z=14&amp;output=embed" scrolling="yes" frameborder="0"></iframe>
-   
+        <p>Location: {{$dorm->address}}</p> 
+        <iframe width="100%" height="400" src="https://maps.google.com/maps?q={{$dorm->address}}&amp;z=14&amp;output=embed" scrolling="yes" frameborder="0"></iframe>
+        
+      </div>
+    </div>
   </div>
-</div>
-</div>
 
 
 
-<div class="pb-4 mt-5 pt-5">
-  <div class="container">
-    <div class="row py-4">
-      <div class="col-md-8 mb-5">
-       <h4 class="">Reviews<br></h4>
-       <hr>
-       @php
-       if (!empty($reviews) && $reviews->count() > 0) {
-       $i = 0;
-       foreach($reviews as $review) {
-       $name = $review->user->first_name . $review->user->last_name;
-       echo "<div class='row'>
-        <div class='col-md-2'>
+  <div class="pb-4 mt-5 pt-5">
+    <div class="container">
+      <div class="row py-4">
+        <div class="col-md-8 mb-5">
+         <h4 class="">Reviews<br></h4>
+         <hr>
+         @php
+         if (!empty($reviews) && $reviews->count() > 0) {
+         $i = 0;
+         foreach($reviews as $review) {
+         $name = $review->user->first_name . $review->user->last_name;
+         echo "<div class='row'>
+         <div class='col-md-2'>
           <img class='comment-img' src='http://2.bp.blogspot.com/-WCkoxnPWXcE/TbZTDG0UI-I/AAAAAAAAAAQ/mukPK0QOVLI/s1600/hotlink.jpg'>
         </div>
         <div class='col-md-10 alert alert-primary'>
