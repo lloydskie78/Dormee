@@ -13,3 +13,6 @@ https://github.com/celinezosa/Database-for-Dormee/blob/master/dormee_test%20(1).
 1.b.  run `composer install --no-scripts`  <br />
 1.c.  run `php artisan key:generate`  (optional) <br />
 1.d.  clear browser cache while refreshing: CTRL+F5 or CMD+F5  <br />
+
+2. Error: Permission etc. <br />
+https://stackoverflow.com/questions/36460874/laravel-5-errorexception-failed-to-open-stream-permission-denied?rq=1<br />
