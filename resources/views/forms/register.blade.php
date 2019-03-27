@@ -93,11 +93,13 @@
     <div class="input-group mb-3 my-5 flex-box-around">
       <h6>Gender</h6>
       <label for="male">
+        <i class="fa fa-mars"></i>
         Male
         <input id="male" name="gender" type="radio" value="male" checked="{{!Auth::guest() && Auth::user()->gender == 'male' ?  'checked'  : ''}}" required>
       </label>
 
       <label for="female">
+        <i class="fa fa-venus"></i>
         Female
         <input id="female" name="gender" type="radio" value="female" checked="{{!Auth::guest() && Auth::user()->gender == 'female' ?  'checked'  : ''}}" required>
       </label>
