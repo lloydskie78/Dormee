@@ -26,7 +26,6 @@ $dorms = \App\Dorm::all()->where('status', 0);
         <th>ID</th>
         <th>Landlord</th>
         <th>Name</th>
-        <th>Address</th>
         <th>Business Permit</th>
         <th>Applied On</th>
       </tr>
@@ -45,7 +44,6 @@ $dorms = \App\Dorm::all()->where('status', 0);
         <td>" . $dorm->first()->landlord->first_name . $dorm->first()->landlord->last_name  . "</td>
       
         <td>" . $dorm->name . "</td>
-        <td>" . $dorm->address . "</td>
         <td>" . $dorm->business_permit . "</td>
         <td>" . $dorm->created_at  . "</td>
         </tr>

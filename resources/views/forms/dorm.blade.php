@@ -31,6 +31,13 @@
         
       </div>
     </div>
+      <div class="form-group">
+      <label class="col-md-4 control-label" id="label-map">Specifically Mark your Dormitory Location:</label>
+      <div class="col-md-8" id="map-container">
+          <div id="map-canvas"></div>
+      </div>
+      
+    </div>
 
     <!-- Text input-->
     <div class="form-group">
@@ -175,6 +182,8 @@
       <div class="col-md-4">
         <input id="photo" name="photo" class="input-file" type="file">
       </div>
+        <input type="hidden" class="form-control" name="lat" id="lat">
+        <input type="hidden" class="form-control" name="lng" id="lng">
     </div>
 
     <!-- Button -->

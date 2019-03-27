@@ -4,12 +4,12 @@
 @section('content')
 
 <!-- Hero section -->
-<section id="banner" class="hero-section set-bg"
-	style='
-	background-image: ("asset(public/img/bg.jpg)")
+<section class="hero-section set-bg"
+	style="
+	background-image:url('{{asset('public/img/bg/artist.jpg')}}');
 	background-attachment: fixed; 
 	background-size: cover; 
-	background-position: sss;'>
+	background-position: center;">
 	<div class="bg-opacity" style="background-size: 100%; width:100%; height: 100%;"> 
 		<div class="container hero-text text-white  w-100">
 		<h2>Find your ideal dormitory</h2>

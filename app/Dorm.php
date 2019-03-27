@@ -34,7 +34,7 @@ class Dorm extends Model
         return $name;
     }
 
-    public function photo() {
+    public function photos() {
 
         if (DormPhoto::where('dorm_id', '=', $this->id)->count() === 0) {
             return null;
@@ -43,7 +43,7 @@ class Dorm extends Model
         }
     }
 
-    public function review() {
+    public function reviews() {
 
         if (UserDormReview::where('dorm_id', '=', $this->id)->count() === 0) {
             return null;
@@ -52,7 +52,7 @@ class Dorm extends Model
         }
     }
 
-    public function dormFilter() {
+    public function dormFilters() {
         return $this->belongsToMany(DormFilter::class, 'specific_dorm_filters', "dorm_id", "filter_id");
     }
 
