@@ -109,13 +109,12 @@ background-position: center;">
 <div class="row">
   <div class="col-md-12">
     <div class="input-group mt-4">
-      Location <input id="address" type="text" class="form-control" placeholder="" name="budget">
+      Location <input id="address" type="text" class="form-control" placeholder="" name="address">
       
-      <label class="control-label" id="label-map">Specifically Mark your Dormitory Location:</label>
+      <p>Mark location</p>
      
-          <div id="map-canvas"></div>
+        <div id="map-canvas"></div>
       
-
     </div>
   </div>
 </div>

@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#map-canvas {
+    max-width: 100%;
+    max-height: 200px;
+}
+
+#label-map {
+    text-align: right;
+    margin-left: 30rem;
+}
+
+#map-container {
+    margin-left:-100px;
+}
