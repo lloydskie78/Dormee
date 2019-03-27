@@ -1,5 +1,11 @@
 # Dormee <br />
 
+-Installation: <br />
+
+1. Database: <br />
+https://github.com/celinezosa/Database-for-Dormee/blob/master/dormee_test%20(1).sql <br/>
+
+
 -Troubleshooting:  <br />
 
 1. Error: "Whoops, looks like something went wrong.":  <br />
