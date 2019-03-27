@@ -7,9 +7,9 @@
 			$url = 'dorms/' . $rec->id;
 			
 
-			if ($rec->photos() != null) {
+			/*if ($rec->photos() != null) {
 				$src = $rec->photos->first()->photo;
-			}
+			}*/
 
 			if ($i + 1 % 2 == 0)  { echo "<div class='row'>"; } 
 

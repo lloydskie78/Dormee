@@ -41,31 +41,31 @@
 
           <div class="carousel-item active"> <img class="d-block img-fluid w-100" src="{{asset($src)}}">
             <div class="carousel-caption">
-              <h5 class="m-0">{{$dorm->name}}</h5>
+              <h5 class="m-0 text-white text-shadow">{{$dorm->name}}</h5>
               <p></p>
             </div>
           </div>
           <div class="carousel-item "> <img class="d-block img-fluid w-100" src="{{asset($src)}}">
             <div class="carousel-caption">
-              <h5 class="m-0">{{$dorm->name}}</h5>
+              <h5 class="m-0 text-white text-shadow">{{$dorm->name}}</h5>
               <p></p>
             </div>
           </div>
           <div class="carousel-item"> <img class="d-block img-fluid w-100" src="{{asset($src)}}">
             <div class="carousel-caption">
-              <h5 class="m-0">{{$dorm->name}}</h5>
+              <h5 class="m-0 text-white text-shadow">{{$dorm->name}}</h5>
               <p></p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="row mt-5">
+      <div class="row mt-3">
         <div class="col-md-7 pl-5">
-           <h4 class=" my-4">{{$dorm->name}}</h4>
- 
+           <h4 class="mt-2">{{$dorm->name}}</h4>
+            <h6 class="mt-3"> <i class="fa fa-map"></i> &nbsp;{{$dorm->address}}</h6>
         </div>
-        <div class="col-md-5 ">
+        <div class="col-md-5">
           <div class="box text-white">{{$dorm->price}} Php / month</div>
         </div>
       </div>
@@ -93,7 +93,7 @@
               <div class="tab-pane fade show" id="tabone" role="tabpanel">
                 <div class="row">
                   <div class="col-md-12">
-                    <table class="table table-striped">
+                    <table class="table table-inverse">
                       <tr>
                         <td>Name</td>
                         <td>{{$dorm->name}}</td>
@@ -105,10 +105,6 @@
                       <tr>
                         <td>Business Permit</td>
                         <td>{{$dorm->business_permit}}</td>
-                      </tr>
-                      <tr>
-                        <td>Description</td>
-                        <td>{{$dorm->description}}</td>
                       </tr>
                       <tr>
                         <td>Monthly Rent</td>
@@ -179,6 +175,7 @@
         </div>
       </div>
     </div>
+
   </div>
 
 
@@ -187,17 +184,11 @@
 </div>
 
 
-<div class="py-3">
+<div class="py-3 mt-3">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <div class="row">
-         <div class="col-md-6">
-            <h4 class="py-3">Description<br></h4>
-           
-         </div>
-          <div class="col-md-6">
-            <h4 class="py-3">Attributes<br></h4>
+<h4 class="py-3">Attributes<br></h4>
             @php
 
             $udar = new \App\UserDormAttributeRating;
@@ -208,8 +199,7 @@
             $acc = $udar->getSpecificRatings($dorm->id, 5);
 
             @endphp
-
-            <table class="table table-hover table-striped">
+   <table class="table table-hover table-striped">
               <tr>
                 <td>Cleanliness</td>
                 <td>{{is_null($clean[0]["avg"])? 1 : $clean[0]["avg"]}}</td>
@@ -231,27 +221,52 @@
                <td>{{is_null($acc[0]["avg"]) ? 1 : $acc[0]["avg"]}}</td>
              </tr>
            </table>
-         </div>
-       </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+<div class="py-3 mt-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+       
+        
+            <h4 class="py-3">Description<br></h4>
+            <hr>
+
+            <p>
+            {{$dorm->description}}
+            </p>
+           
      </div>
+
+
    </div>
  </div>
 </div>
 
-<div class="row">
+
+<div class="container mt-5">
+  <div class="row">
   <div class="col-md-8">
             <h4 class="mb-2">Address</h4>
-            {{$dorm->address}}
+            <hr>
+         
 
             <iframe width="100%" height="400" src="https://maps.google.com/maps?q={{$dorm->address}}, Davao City, 8000 Davao del Sur&amp;z=14&amp;output=embed" scrolling="yes" frameborder="0"></iframe>
    
   </div>
 </div>
+</div>
 
-<div class="pb-4">
+
+
+<div class="pb-4 mt-5 pt-5">
   <div class="container">
     <div class="row py-4">
-      <div class="col-md-6 mb-5">
+      <div class="col-md-8 mb-5">
        <h4 class="">Reviews<br></h4>
        <hr>
        @php
@@ -302,7 +317,7 @@
 
 </div>
 
-<div class="col-md-6">
+<div class="col-md-4">
   @if(Auth::check())
   <h4>Rate Dorm</h4>
   <table class="table table-hover">
