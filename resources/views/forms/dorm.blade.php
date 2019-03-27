@@ -27,14 +27,13 @@
     <div class="form-group">
       <label class="col-md-4 control-label" for="address">Address</label>  
       <div class="col-md-4">
-        <input id="address" name="address" type="text" placeholder="123" class="form-control input-md" required="">
-        
+        <input id="address" name="address" type="text" placeholder="#12 Lark St., Davao City" class="form-control input-md" required="">
       </div>
     </div>
     <div class="form-group">
       <label class="control-label" id="label-map">Specifically Mark your Dormitory Location:</label>
-      <div class="col-md-12 w-100" id="map-container">
-          <div id="map-canvas"></div>
+      <div class="col-md-12">
+          <div id="map-canvas" style="width:70%; margin: 0 auto;"></div>
       </div>
       
     </div>

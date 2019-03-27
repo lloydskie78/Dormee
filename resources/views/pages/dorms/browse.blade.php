@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="text-white bg-primary " style="background-image:url('{{asset('public/img/bg/bed_plant.jpg')}}'); 
+<div class="text-white bg-primary bg-opacity" style="background-image:url('{{asset('public/img/bg/bed_plant.jpg')}}'); 
 background-size: 100%; 
 background-position: center;">
 
-<div class="container w-100" style="background-color: rgba(0,0,0,0.6);">
+<div class="container w-100 bg-opacity" style="width: 100%; padding: 0;">
 
   <div class="col-md-6  text-center my-5 p-5">
     <h1 class="display-1">Dorms</h1>
@@ -104,12 +104,10 @@ background-position: center;">
 </div>
 </div>
 
-
-
 <div class="row">
   <div class="col-md-12">
     <div class="input-group mt-4">
-      Location <input id="address" type="text" class="form-control" placeholder="" name="address">
+      Address <input id="address" type="text" class="form-control" placeholder="" name="address">
       
       <p>Mark location</p>
      
@@ -120,10 +118,13 @@ background-position: center;">
 </div>
 
 
+<div class="row my-5">
+  <div class="col-md-6">
+     <button type="button" id="btnShowFilters" class="btn btn-primary mt-4">Filters</button>
+  </div>
+  <div class="col-md-6 hidden-box pull-right">
 
-<div class="col-md-4 hidden-box">
-  <button type="button" id="btnShowFilters" class="btn btn-primary mt-4">Filters</button>
-  <div id="filtersBox" class="hidden-box" style="display: none;">
+  <div id="filtersBox" class="hidden-box m-auto" style="display: none;">
     <label class="checkbox" for="filters-0">
       <input type="checkbox" name="filters[]" id="filters-0" value="1">
       Roommates
@@ -182,6 +183,8 @@ background-position: center;">
     </label>
   </div>
 </div>
+</div>
+
 
 <div class="col-md-12 mt-5 text-center m-auto">
   <input type="submit" class="btn btn-primary" value="Search Dorms">

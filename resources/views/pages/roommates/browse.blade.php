@@ -2,12 +2,12 @@
 
 
 @section('content')
-<div class="pt-5 px-4 text-white bg-primary" 
+<div class="bg-opacity text-white bg-primary" 
     style="background-image:url('{{asset('public/img/bg/group_peeps_2.jpg')}}'); 
     background-position: bottom; 
     height: 500px; 
     background-size: cover; padding: 0;">
-    <div class="pt-5 container" style="background-color: rgba(0, 0,0,0.6); height: 200px;">
+    <div class="pt-5 container bg-opacity" style="background-color: rgba(0, 0,0,0.6); background-size: 100%;height: 200px;">
       <div class="row">
         <div class="col-md-6 text-md-left text-center align-self-center my-5">
           <h1 class="display-1">Roommates</h1>
