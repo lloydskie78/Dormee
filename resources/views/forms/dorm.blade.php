@@ -33,7 +33,14 @@
     <div class="form-group">
       <label class="col-md-5 control-label" for="address">Specifically Mark your Dormitory Location:</label>
       <div class="col-md-12">
+<<<<<<< HEAD
           <div id="map-canvas" style="width:50%; margin: 0 auto; margin-top: 1rem;"></div>
+=======
+        <div style="width:40%; margin: 0 auto;">
+          
+          <div id="map-canvas" style="width:70%; margin: 0 auto;"></div>
+        </div>
+>>>>>>> a8c5ea6ba75efe2eb5500aa01aabd5535d6ed543
       </div>
       
     </div>
