@@ -31,9 +31,9 @@
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label" id="label-map">Specifically Mark your Dormitory Location:</label>
+      <label class="col-md-5 control-label" for="address">Specifically Mark your Dormitory Location:</label>
       <div class="col-md-12">
-          <div id="map-canvas" style="width:70%; margin: 0 auto;"></div>
+          <div id="map-canvas" style="width:50%; margin: 0 auto; margin-top: 1rem;"></div>
       </div>
       
     </div>

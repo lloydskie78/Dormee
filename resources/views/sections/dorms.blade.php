@@ -77,6 +77,7 @@ $dorms = \App\Dorm::all()->where('status', 0);
       <th>Price</th>
       <th>Filters</th>
       <th>Created At</th>
+      <th>Action</th>
     </tr>
   </thead>
   <!--Table head-->
@@ -94,7 +95,7 @@ $dorms = \App\Dorm::all()->where('status', 0);
       $stat = $dorm->status == 1 ? "Verified" : $dorm->status == 0 ? "Unverified" : "Occupied";
       $dorm_url = "dorms/$dorm->id";
       echo "
-      <td><a href='". URL::to($dorm_url) . "'>" . $dorm->id . "</a></td>
+      <td><a href=". URL::to($dorm_url) . "'>" . $dorm->id . "</a></td>
       <td>" . $dorm->first()->landlord->first_name . $dorm->first()->landlord->last_name  . "</td>
       <td>" .  $stat . "</td>
       <td>" . $dorm->name . "</td>
@@ -103,6 +104,7 @@ $dorms = \App\Dorm::all()->where('status', 0);
       <td>" . $dorm->price . "</td>
       <td>" . $filters.  "</td>
       <td>" . $dorm->created_at  . "</td>
+      <td> " . '<a href="#" class="btn btn-sm btn-info"> View Map</a>' . "</td>
       </tr>
       ";
     }

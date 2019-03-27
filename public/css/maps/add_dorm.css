@@ -3,10 +3,10 @@
     padding: 0;
 }
 
-#map-canvas {
+/* #map-canvas {
     max-width: 100%;
     max-height: 200px;
-}
+} */
 
 #label-map {
     text-align: right;
