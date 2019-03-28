@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->foreign('user_type_id')->references('id')->on('user_types');
             $table->string('username')->unique();
             $table->string('email')->unique();
+            $table->tinyInteger('email_confirmed')->default(0);
             $table->string('password');
             $table->string('first_name');
             $table->string('last_name');
