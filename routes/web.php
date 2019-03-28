@@ -111,3 +111,13 @@ Route::get('roommates/{id}', 'RoommateController@show');
 Route::get('roommates', function() {
 	return view('pages.roommates.browse');
 })->name('roommates');
+
+/* Rooms */
+
+Route::get('rooms/{id}', 'RoomController@show');
+
+Route::get('rooms', 'RoomController@browse')->name('rooms');
+
+Route::post('rooms/{id}', 'Room@review');
+
+Route::post('rooms', 'RoomsController@search');

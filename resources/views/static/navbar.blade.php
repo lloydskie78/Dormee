@@ -30,6 +30,10 @@
                     <a href="{{URL::to('dorms')}}" class="mx-2 mr-5">
                         Dorms
                     </a>
+
+                    <a href="{{URL::to('rooms')}}" class="mx-2 mr-5">
+                        Rooms
+                    </a>
                     <a href="{{URL::to('roommates')}}">
                         {{ ('Roommates') }}
                     </a>
