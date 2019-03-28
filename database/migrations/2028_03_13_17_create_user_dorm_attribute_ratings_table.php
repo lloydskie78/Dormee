@@ -23,6 +23,8 @@ class CreateUserDormAttributeRatingsTable extends Migration
             $table->foreign('rating_id')->references('id')->on('ratings');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP()'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP()'));
+            $table->softDeletes();
+
         });
     }
 

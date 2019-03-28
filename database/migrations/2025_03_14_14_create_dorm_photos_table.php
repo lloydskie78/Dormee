@@ -18,9 +18,9 @@ class CreateDormPhotosTable extends Migration
             $table->integer('dorm_id')->unsigned();
             $table->foreign('dorm_id')->references('id')->on('dorms');
             $table->longText('photo');
-            $table->enum('photo_type', ['main', 'secondary']);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP()'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP()'));
+            $table->softDeletes();
         });
     }
 

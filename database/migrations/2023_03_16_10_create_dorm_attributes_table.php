@@ -20,7 +20,8 @@ class CreateDormAttributesTable extends Migration
             $table->integer('attribute_id')->unsigned();
             $table->foreign('attribute_id')->references('id')->on('attributes');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP()'));
-             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP()'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP()'));
+            $table->softDeletes();
         });
     }
 

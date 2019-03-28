@@ -21,13 +21,13 @@ class CreateDormsTable extends Migration
             $table->string('name');
             $table->enum('gender', ['Male','Female','Mixed',''])->default('Male');
             $table->time('curfew');
-            $table->enum('rooms', [1,2,'3+'])->default(1);
             $table->string('address');
             $table->string('business_permit');
+            $table->string('business_permit_photo');
             $table->string('description');
-            $table->decimal('price')->default(0.00);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP()'));
-             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP()'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP()'));
+            $table->softDeletes();
         });
     }
 

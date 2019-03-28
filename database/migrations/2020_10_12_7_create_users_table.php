@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->tinyInteger('is_flagged')->default(0);
+            $table->tinyInteger('status')->default(0);
             $table->integer('user_type_id')->unsigned();
             $table->foreign('user_type_id')->references('id')->on('user_types');
             $table->string('username')->unique();
@@ -28,13 +28,15 @@ class CreateUsersTable extends Migration
             $table->foreign('occupation_id')->references('id')->on('occupations');
             $table->tinyInteger('is_roommate')->default(0);
             $table->date('birthdate');
-            $table->string('phone');
-            $table->string('address');
-            $table->string('about');
-            $table->longText('photo');
+            $table->string('about')->nullable();
+            $table->longText('photo')->nullable();
+            $table->enum('schedule', array('morning', 'afternoon', 'evening', 'night'))->nullable();
+            $table->time('waking_time')->nullable();
+            $table->time('sleeping_time')->nullable();
             $table->rememberToken();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP()'));
-             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP()'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP()'));
+            $table->softDeletes();
         });
     }
 
