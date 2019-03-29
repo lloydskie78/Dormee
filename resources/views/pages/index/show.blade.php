@@ -3,17 +3,19 @@
 @section('content')
 
 <!-- Hero section -->
-<div class="hero-section blur"
+<div class="hero-section blur pb-5"
 style="
 background-image:url('{{asset('public/img/bg/blue.jpg')}}');
 background-size: cover; 
 background-repeat: no-repeat;
 background-attachment: fixed; 
 background-position: bottom;
-position: relative;
-height: 150%;">
-<div class="bg-opacity" style="background-size: 100%; width:100%; height: 100%;"> 
-	<div class="container-fluid hero-text text-white w-100 ">
+display: block;
+ position: relative;
+ height: auto;
+ min-height: 100% !important;">
+<div class="bg-opacity" style="background-size: 100%; width:100%; min-height: 100% !important; padding: 0;"> 
+	<div class="container hero-text text-white w-100 ">
 		<h2 class="text-shadow">Find your ideal dormitory</h2>
 		<p class="text-shadow">Search through dormitories that suit your preferences.</p>
 		<div class="row">
