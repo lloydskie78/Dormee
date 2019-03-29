@@ -1,21 +1,23 @@
 @extends('layouts.app')
-
 @include('static.header')
 @section('content')
 
 <!-- Hero section -->
-<section class="hero-section blur"
-	style="
-	background-image:url('{{asset('public/img/bg/blue.jpg')}}');
-	background-attachment: fixed; 
-	background-size: contain; 
-	background-position: bottom;">
-	<div class="bg-opacity " style="background-size: 100%; width:100%; height: 100%;"> 
-		<div class="container hero-text text-white w-100 ">
+<div class="hero-section blur"
+style="
+background-image:url('{{asset('public/img/bg/blue.jpg')}}');
+background-size: cover; 
+background-repeat: no-repeat;
+background-attachment: fixed; 
+background-position: bottom;
+position: relative;
+height: 150%;">
+<div class="bg-opacity" style="background-size: 100%; width:100%; height: 100%;"> 
+	<div class="container-fluid hero-text text-white w-100 ">
 		<h2 class="text-shadow">Find your ideal dormitory</h2>
 		<p class="text-shadow">Search through dormitories that suit your preferences.</p>
 		<div class="row">
-			<div class="col-md-5 box m-auto mx-5 faa-float animated shadowed rounded" style="height: 250px; max-width: 250px;">
+			<div class="col-md-5 box m-auto faa-float animated shadowed rounded" style="height: 250px; max-width: 250px;">
 				<span class="glyphicon glyphicon-home fa-5x mt-5 faa-tada animated"></span>
 				<h3 class="my-5">Dorms</h3>
 			</div>
@@ -28,11 +30,12 @@
 			</div>
 		</div>
 	</div>
-	</div>
-	
+</div>
 
-</section>
+
+</div>
 <!-- Hero section end -->
+
 
 
 <!-- Filter form section -->
@@ -53,6 +56,8 @@
 </div>
 <!-- Filter form section end -->
 
+
+
 <!-- Properties section -->
 <section class="properties-section spad">
 	<div class="container">
@@ -63,7 +68,7 @@
 		<div class="text-center">
 			@include('sections.recent_dorms')
 		</div>
-
-	</section>
+</div>
+</section>
 
 	@endsection
